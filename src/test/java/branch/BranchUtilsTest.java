@@ -52,5 +52,9 @@ class BranchUtilsTest {
         BranchUtils.br().exec();
         BranchUtils.br().elf(true).then(() -> System.out.println("aaa")).exec();
         BranchUtils.br().els(() -> System.out.println("aaa")).exec();
+        BranchUtils.br().elf(false).then(()-> System.out.println("haha"))
+                .elf(true).then(()-> System.out.println("wowo")).exec();
+        BranchUtils.br().ef(false).then(null)
+                .elf(true).then(null).exec();
     }
 }

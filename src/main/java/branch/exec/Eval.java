@@ -26,8 +26,10 @@ public class Eval extends ItemContainer {
         List<Item> elsItems = this.getElsItems();
         if ((elsItems.size() > 0) && (ifItems.size() == 0) || (ifItems.size() > 0) && !ifItems.get(ifItems.size() - 1).isCondition()) {
             for (Item item : elsItems) {
-                if (item.isCondition() && null != item.getExec()) {
-                    item.getExec().exec();
+                if (item.isCondition()) {
+                    if (null != item.getExec()) {
+                        item.getExec().exec();
+                    }
                     return;
                 }
             }

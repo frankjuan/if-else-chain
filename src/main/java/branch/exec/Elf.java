@@ -22,8 +22,8 @@ public class Elf extends Eval {
         return tlThen;
     }
 
-    public Eval els(ExecFunction execFunction) {
-        Item elsItem = new Item(true, execFunction);
+    public Eval els(ExecFunction exec) {
+        Item elsItem = new Item(true, exec);
         this.getElsItems().add(elsItem);
         return new Eval(this.getIfItems(), this.getElsItems());
     }

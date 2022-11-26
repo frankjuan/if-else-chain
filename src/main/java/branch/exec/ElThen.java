@@ -14,11 +14,11 @@ public class ElThen extends ItemContainer {
         super(ifItems, elsItems);
     }
 
-    public Elf then(ExecFunction execFunction) {
+    public Elf then(ExecFunction exec) {
         List<Item> elfItems = this.getElsItems();
         if (null != elfItems && elfItems.size() > 0) {
             Item elsItem = elfItems.get(elfItems.size() - 1);
-            elsItem.setExec(execFunction);
+            elsItem.setExec(exec);
         }
         return new Elf(this.getIfItems(), elfItems);
     }

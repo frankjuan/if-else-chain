@@ -15,9 +15,9 @@ public class Item {
         this.condition = condition;
     }
 
-    public Item(Boolean condition, ExecFunction execFunction) {
+    public Item(Boolean condition, ExecFunction exec) {
         this.condition = condition;
-        this.exec = execFunction;
+        this.exec = exec;
     }
 
     public boolean isCondition() {
